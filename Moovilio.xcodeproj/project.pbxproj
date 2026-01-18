@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		CB35E0672F1D30F200A63072 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB35DFF32F1D2A4600A63072 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB35DFFA2F1D2A4600A63072;
+			remoteInfo = Moovilio;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		CB35DFFB2F1D2A4600A63072 /* Moovilio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moovilio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB35E0632F1D30F200A63072 /* MoovilioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoovilioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +27,22 @@
 			path = Moovilio;
 			sourceTree = "<group>";
 		};
+		CB35E0642F1D30F200A63072 /* MoovilioTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MoovilioTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CB35DFF82F1D2A4600A63072 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB35E0602F1D30F200A63072 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				CB35DFFD2F1D2A4600A63072 /* Moovilio */,
+				CB35E0642F1D30F200A63072 /* MoovilioTests */,
 				CB35DFFC2F1D2A4600A63072 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				CB35DFFB2F1D2A4600A63072 /* Moovilio.app */,
+				CB35E0632F1D30F200A63072 /* MoovilioTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +95,29 @@
 			productReference = CB35DFFB2F1D2A4600A63072 /* Moovilio.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CB35E0622F1D30F200A63072 /* MoovilioTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB35E06B2F1D30F200A63072 /* Build configuration list for PBXNativeTarget "MoovilioTests" */;
+			buildPhases = (
+				CB35E05F2F1D30F200A63072 /* Sources */,
+				CB35E0602F1D30F200A63072 /* Frameworks */,
+				CB35E0612F1D30F200A63072 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB35E0682F1D30F200A63072 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CB35E0642F1D30F200A63072 /* MoovilioTests */,
+			);
+			name = MoovilioTests;
+			packageProductDependencies = (
+			);
+			productName = MoovilioTests;
+			productReference = CB35E0632F1D30F200A63072 /* MoovilioTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -82,6 +130,10 @@
 				TargetAttributes = {
 					CB35DFFA2F1D2A4600A63072 = {
 						CreatedOnToolsVersion = 26.1.1;
+					};
+					CB35E0622F1D30F200A63072 = {
+						CreatedOnToolsVersion = 26.1.1;
+						TestTargetID = CB35DFFA2F1D2A4600A63072;
 					};
 				};
 			};
@@ -100,12 +152,20 @@
 			projectRoot = "";
 			targets = (
 				CB35DFFA2F1D2A4600A63072 /* Moovilio */,
+				CB35E0622F1D30F200A63072 /* MoovilioTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CB35DFF92F1D2A4600A63072 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB35E0612F1D30F200A63072 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +182,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CB35E05F2F1D30F200A63072 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB35E0682F1D30F200A63072 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB35DFFA2F1D2A4600A63072 /* Moovilio */;
+			targetProxy = CB35E0672F1D30F200A63072 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CB35E0042F1D2A4700A63072 /* Debug */ = {
@@ -310,6 +385,48 @@
 			};
 			name = Release;
 		};
+		CB35E0692F1D30F200A63072 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6LM6CT6LR6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mirabella.MoovilioTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Moovilio.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Moovilio";
+			};
+			name = Debug;
+		};
+		CB35E06A2F1D30F200A63072 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6LM6CT6LR6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mirabella.MoovilioTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Moovilio.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Moovilio";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -327,6 +444,15 @@
 			buildConfigurations = (
 				CB35E0072F1D2A4700A63072 /* Debug */,
 				CB35E0082F1D2A4700A63072 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB35E06B2F1D30F200A63072 /* Build configuration list for PBXNativeTarget "MoovilioTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB35E0692F1D30F200A63072 /* Debug */,
+				CB35E06A2F1D30F200A63072 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
