@@ -37,10 +37,13 @@ struct MovieListView: View {
                         HStack {
                             Spacer()
                             ProgressView()
+                                .scaleEffect(1.1)
                             Spacer()
                         }
                         .padding()
+                        .transition(.opacity)
                     }
+
 
                     if viewModel.movies.isEmpty && !viewModel.isLoading {
                         VStack(spacing: 8) {

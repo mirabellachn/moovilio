@@ -11,7 +11,7 @@ import SwiftUI
 struct MoovilioApp: App {
     var body: some Scene {
         WindowGroup {
-            MovieListView()
+            SplashView()
         }
     }
 }
