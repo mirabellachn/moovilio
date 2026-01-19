@@ -1,4 +1,4 @@
-<img width="1024" height="1024" alt="AppIcon" src="https://github.com/user-attachments/assets/593a52e7-37e4-42a6-9765-dd8629ae4656" />
+<img width="500" height="500" alt="AppIcon" src="https://github.com/user-attachments/assets/593a52e7-37e4-42a6-9765-dd8629ae4656" />
 
 # Moovilio
 
