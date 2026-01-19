@@ -21,9 +21,22 @@
 		CB35E0632F1D30F200A63072 /* MoovilioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoovilioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		CB8ED5182F1E45A4004095EF /* Exceptions for "Moovilio" folder in "Moovilio" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = CB35DFFA2F1D2A4600A63072 /* Moovilio */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		CB35DFFD2F1D2A4600A63072 /* Moovilio */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				CB8ED5182F1E45A4004095EF /* Exceptions for "Moovilio" folder in "Moovilio" target */,
+			);
 			path = Moovilio;
 			sourceTree = "<group>";
 		};
