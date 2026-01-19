@@ -16,22 +16,15 @@ struct MovieDetailView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
 
-                if let poster = movie.posterPath {
-                    AsyncImage(
-                        url: URL(string: "\(APIConfig.imageBaseURL)\(poster)")
-                    ) { image in
-                        image
-                            .resizable()
-                            .scaledToFit()
-                    } placeholder: {
-                        ProgressView()
-                    }
+                MoviePosterView(posterPath: movie.posterPath)
+                    .frame(maxWidth: .infinity)
                     .cornerRadius(16)
-                }
 
                 Text(movie.title)
                     .font(.title)
                     .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity)
 
                 Text(movie.overview)
                     .font(.body)
@@ -62,7 +55,6 @@ struct MovieDetailView: View {
                                 Text(review.content)
                                     .font(.footnote)
                                     .foregroundStyle(.secondary)
-                                    .lineLimit(5)
                             }
                         }
                     }

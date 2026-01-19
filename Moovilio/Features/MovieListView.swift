@@ -83,7 +83,6 @@ struct MovieListView: View {
         VStack(alignment: .leading, spacing: 12) {
 
             MoviePosterView(posterPath: movie.posterPath)
-                .frame(height: 200)
                 .cornerRadius(12)
                 .overlay(
                     RoundedRectangle(cornerRadius: 12)

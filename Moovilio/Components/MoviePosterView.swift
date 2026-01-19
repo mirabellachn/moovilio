@@ -9,16 +9,37 @@ import SwiftUI
 
 struct MoviePosterView: View {
     let posterPath: String?
+    var aspectRatio: CGFloat = 2 / 3   
 
     var body: some View {
-        AsyncImage(url: url) { image in
-            image.resizable().scaledToFill()
-        } placeholder: {
-            ProgressView()
+        AsyncImage(url: url) { phase in
+            switch phase {
+            case .success(let image):
+                image
+                    .resizable()
+                    .scaledToFill()
+
+            case .failure(_):
+                placeholder
+
+            case .empty:
+                placeholder
+
+            @unknown default:
+                placeholder
+            }
         }
-        .frame(height: 220)
+        .aspectRatio(aspectRatio, contentMode: .fit)
         .clipped()
         .cornerRadius(12)
+    }
+
+    private var placeholder: some View {
+        RoundedRectangle(cornerRadius: 12)
+            .fill(Color.secondary.opacity(0.15))
+            .overlay {
+                ProgressView()
+            }
     }
 
     private var url: URL? {
@@ -28,10 +49,9 @@ struct MoviePosterView: View {
 }
 
 
-
 #Preview {
     MoviePosterView(
-        posterPath: "/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg"
+        posterPath: "//gEU2QniE6E77NI6lCU6MxlNBvIx.jpg"
     )
     .padding()
 }
