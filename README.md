@@ -1,6 +1,7 @@
 # Moovilio
 
 Moovilio is a native iOS application that displays popular movies using data from **The Movie Database (TMDB)** API.  
+
 The app focuses on clean architecture, native iOS UI/UX, and maintainable code.
 
 ---
