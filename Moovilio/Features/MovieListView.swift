@@ -18,64 +18,63 @@ struct MovieListView: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView {
-                LazyVGrid(columns: columns, spacing: 16) {
-
-                    ForEach(viewModel.movies) { movie in
-                        NavigationLink {
-                            MovieDetailView(movie: movie)
-                        } label: {
-                            gridCardView(for: movie)
+            Group {
+                if viewModel.hasError {
+                    ErrorView(
+                        message: "Failed to load movies. Please check your internet connection.",
+                        retryAction: {
+                            Task {
+                                await viewModel.fetchMovies()
+                            }
                         }
-                        .buttonStyle(.plain)
-                        .onAppear {
-                            loadMoreIfNeeded(movie)
-                        }
-                    }
+                    )
+                } else {
+                    ScrollView {
+                        LazyVGrid(columns: columns, spacing: 16) {
 
-                    if viewModel.isLoading {
-                        HStack {
-                            Spacer()
-                            ProgressView()
-                                .scaleEffect(1.1)
-                            Spacer()
+                            ForEach(viewModel.movies) { movie in
+                                NavigationLink {
+                                    MovieDetailView(movie: movie)
+                                } label: {
+                                    gridCardView(for: movie)
+                                }
+                                .buttonStyle(.plain)
+                                .onAppear {
+                                    loadMoreIfNeeded(movie)
+                                }
+                            }
+
+                            if viewModel.isLoading {
+                                HStack {
+                                    Spacer()
+                                    ProgressView()
+                                        .scaleEffect(1.1)
+                                    Spacer()
+                                }
+                                .padding()
+                                .transition(.opacity)
+                            }
+
+                            if viewModel.movies.isEmpty && !viewModel.isLoading {
+                                VStack(spacing: 8) {
+                                    Text("No movies available")
+                                        .font(.headline)
+                                    Text("Please check your internet connection.")
+                                        .font(.subheadline)
+                                        .foregroundColor(.secondary)
+                                }
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 40)
+                            }
                         }
                         .padding()
-                        .transition(.opacity)
-                    }
-
-
-                    if viewModel.movies.isEmpty && !viewModel.isLoading {
-                        VStack(spacing: 8) {
-                            Text("No movies available")
-                                .font(.headline)
-                            Text("Please check your internet connection.")
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                        }
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 40)
                     }
                 }
-                .padding()
             }
             .navigationTitle("Moovilio")
             .navigationBarTitleDisplayMode(.large)
             .task {
                 await viewModel.fetchMovies()
-            }
-
-            .alert(
-                "Failed to load movies",
-                isPresented: $viewModel.hasError
-            ) {
-                Button("Retry") {
-                    Task {
-                        await viewModel.fetchMovies()
-                    }
-                }
-            } message: {
-                Text("Please check your internet connection and try again.")
             }
         }
     }
